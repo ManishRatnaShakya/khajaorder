@@ -1,13 +1,9 @@
 // import { all, call, fork, takeEvery, select,put } from "redux-saga/effects";
 
-import { put,all, call, takeLatest, select,fork } from 'redux-saga/effects';
+import { put,all, call, takeLatest, fork } from 'redux-saga/effects';
 
 
-import { CATEGORY } from './constants';
 import { BANNER } from './constants';
-import {makeSelectCategory} from './selectors';
-import { deleteItem } from './../Items/actions';
-import axios from 'axios';
 
 
 export async function  setRestuarantDataAPI(url,formData){

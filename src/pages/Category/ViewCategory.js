@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, CardBody, Row, Col, Nav, NavItem, NavLink, UncontrolledTooltip,Modal,ModalHeader,ModalFooter, Input, Label, Button } from "reactstrap";
+import { Container, Card, CardBody, Row, Col, Nav, NavItem, NavLink, UncontrolledTooltip,Modal,ModalHeader,ModalFooter, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import classnames from 'classnames';
 import { connect } from 'react-redux';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, CardBody, Row, Col, Media,Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import BannerCard from './BannerCard';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';

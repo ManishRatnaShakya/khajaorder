@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Card, CardBody, Row,Spinner, Nav, NavItem, NavLink,CardTitle,CardSubtitle, TabPane, TabContent, Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Container, Card, CardBody, Row,Spinner, TabPane, TabContent, Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link, Redirect } from "react-router-dom";
-import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {getCategoryData} from '../../store/Category/actions';
 // import {Redirect} from 'react-router-dom';
@@ -13,22 +11,16 @@ import 'toastr/build/toastr.min.css'
 //Dropzone
 import Dropzone from "react-dropzone";
 import {
-    changeCategoryName,
-    changeCategoryImage,
-    saveChanges,
     editCategoryData,
     setInitial
 } from '../../store/Category/actions';
 //select
-import Select from 'react-select';
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
 import { compose } from 'redux';
 import {
 
-  makeSelectLoading,
-  makeSelectSuccess,
   makeSelectEditError,
   makeSelectEditSuccess,
   makeSelectEditLoading,

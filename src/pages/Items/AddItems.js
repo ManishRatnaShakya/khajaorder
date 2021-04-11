@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Editor } from "react-draft-wysiwyg";
-import { EditorState } from 'draft-js';
+// import { EditorState } from 'draft-js';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {draftToHtml} from  'draftjs-to-html';
 import { convertToHTML } from 'draft-convert';
@@ -16,7 +16,7 @@ import toastr from 'toastr'
 import 'toastr/build/toastr.min.css'
 import {
     changeItemName,
-    changeEmail,
+    // changeEmail,
     changeItemNickname,
     changeCategory ,
     changeRestuarant,
@@ -37,16 +37,16 @@ import { getCategoryData} from '../../store/Category/actions';
 import Breadcrumbs from '../../components/Common/Breadcrumb';
 import { compose } from 'redux';
 import {
-     makeSelectItemName,
-    makeSelectItemNickname,
+    //  makeSelectItemName,
+    // makeSelectItemNickname,
  
-    makeSelectRegularPrice,
-    makeSelectNewPrice,
-    makeSelectDiscountRate,
-    // contact1:makeSelectDescription(),
-    makeSelectImage2,
-    makeSelectImage1,
-    makeSelectDescription,
+    // makeSelectRegularPrice,
+    // makeSelectNewPrice,
+    // makeSelectDiscountRate,
+    // // contact1:makeSelectDescription(),
+    // makeSelectImage2,
+    // makeSelectImage1,
+    // makeSelectDescription,
     makeSelectItemSuccess,
     makeSelectLoading,
     makeSelectError

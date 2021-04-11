@@ -9,30 +9,10 @@ import cellEditFactory from "react-bootstrap-table2-editor";
 //Dropzone
 import Dropzone from "react-dropzone";
 import {
-    changeName,
-    changeEmail,
-    changePassword ,
-    changeAddress,
-    changeCity ,
-    changeState,
-    changeZip ,
-    changeContact1 ,
-    changeContact2 ,
-    changeTagline ,
-    changeDescription ,
-    changeFacebook,
-    changeInstagram ,
-    changePinterest,
-    changeTwitter ,
-    changeGoogleMap,
-    changeLogo,
-    changeCover,
     saveChanges,
-    changeStatus,
     setInitial,
 } from '../../store/Restuarant/actions';
 //select
-import Select from 'react-select';
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
@@ -181,15 +161,7 @@ class YourRestuarant extends Component {
         if(this.props.success){
             this.onSuccess()
         }
- const products = [
-  { Days: "Sunday", From:"11:00",To:"12:00"},
-  { Days:  "Monday",From:"12:00" ,To:"12:00"},
-  { Days: "Tuesday",From:"13:00" ,To:"12:00"},
-  { Days:  "Wednesday", From:"13:00" ,To:"12:00"},
-  { Days:  "Thusday", From:"13:00" ,To:"12:00"},
-  { Days:  "Friday", From:"13:00" ,To:"12:00"},
-  { Days:  "Saturday", From:"13:00" ,To:"12:00"},
-];
+
 
 const columns = [
   {

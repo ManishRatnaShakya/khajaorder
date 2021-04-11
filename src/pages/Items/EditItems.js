@@ -13,7 +13,6 @@ import Dropzone from "react-dropzone";
 import {Redirect} from "react-router-dom";
 import {
     changeItemName,
-    changeEmail,
     changeItemNickname,
     changeCategory ,
     changeRestuarant,
@@ -29,25 +28,13 @@ import {
 } from '../../store/Items/actions';
 //select
 import Select from 'react-select';
-import {draftToHtml} from  'draftjs-to-html';
 import { convertToHTML } from 'draft-convert';
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
 import { compose } from 'redux';
 import {
-     makeSelectItemName,
-    makeSelectItemNickname,
- 
-    makeSelectRegularPrice,
-    makeSelectNewPrice,
-    makeSelectDiscountRate,
-    // contact1:makeSelectDescription(),
-    makeSelectImage2,
-    makeSelectImage1,
-    makeSelectDescription,
-    makeSelectItemSuccess,
-    makeSelectItems,
+     makeSelectItems,
     makeSelectEditItemSuccess,
     makeSelectEditItemLoading,
     makeSelectEditItemError,
@@ -810,7 +797,6 @@ const mapStateToProps =createStructuredSelector({
     error:makeSelectEditItemError(),
     categoryData:makeSelectCategory(),
     restuarantData:makeSelectRestaunt(),
-    
     itemsData:makeSelectItems(),
 })
 const mapDispatchToProps =(dispatch)=>{ 

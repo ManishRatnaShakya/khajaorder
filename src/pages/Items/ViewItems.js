@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, CardBody, Row, Col, Nav, NavItem, NavLink, UncontrolledTooltip,Badge,Modal,ModalHeader,ModalFooter, Input, Label, Button } from "reactstrap";
+import { Container, Card, CardBody, Row, Col, Nav, NavItem, NavLink, UncontrolledTooltip,Badge,Modal,ModalHeader,ModalFooter, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import classnames from 'classnames';
 import { createStructuredSelector } from 'reselect';
@@ -9,7 +9,7 @@ import { MDBDataTable } from "mdbreact";
 import "./datatables.scss";
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
-import { getItemData,deleteItem,setInitial } from '../../store/Items/actions';
+import { getItemData,deleteItem } from '../../store/Items/actions';
 import {makeSelectDataFromAPI} from "../../store/Items/selectors"
 
 class ViewItems extends Component {

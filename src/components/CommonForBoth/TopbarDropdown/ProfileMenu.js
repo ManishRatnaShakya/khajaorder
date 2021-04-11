@@ -29,7 +29,7 @@ class ProfileMenu extends Component {
  let username = "Admin";
    if(localStorage.getItem("authUser"))
    {
-        const obj = JSON.parse(localStorage.getItem("authUser"));
+        // const obj = JSON.parse(localStorage.getItem("authUser"));
         // const uNm = obj.email.split("@")[0];
         // username = uNm.charAt(0).toUpperCase() + uNm.slice(1);
    }

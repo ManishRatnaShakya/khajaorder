@@ -1,7 +1,6 @@
 // import { all, call, fork, takeEvery, select,put } from "redux-saga/effects";
 
-import { put,all, call, takeLatest, select,fork } from 'redux-saga/effects';
-import {addRestuarantAPI} from "../../Constants/apiUrl";
+import { put,all, call, takeLatest, fork } from 'redux-saga/effects';
 
 import { RESTUARANTS } from './constants';
 // import {makeSelectRestaunt} from './selectors';

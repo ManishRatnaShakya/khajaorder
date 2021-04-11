@@ -2,23 +2,17 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import {
-  Row,
-  Col,
   Form,
   FormGroup,
   InputGroup,
   InputGroupAddon,
   Input,
   Button,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
 
 // Import menuDropdown
-import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
 import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDropdown";
 import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
 
@@ -26,24 +20,15 @@ import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
 import { withNamespaces } from "react-i18next";
 
 //Import Megamenu
-import MegaMenu from "./MegaMenu";
 
 // Redux Store
 import { toggleRightSidebar } from "../../store/actions";
 
 //Import logo Images
-import logosmdark from "../../assets/images/Khajaorder.jpg";
-import logodark from "../../assets/images/Khajaorder.jpg";
 import logosmlight from "../../assets/images/Khajaorder.jpg";
 import logolight from "../../assets/images/Khajaorder.jpg";
 
 //Import Social Profile Images
-import github from "../../assets/images/brands/github.png";
-import bitbucket from "../../assets/images/brands/bitbucket.png";
-import dribbble from "../../assets/images/brands/dribbble.png";
-import dropbox from "../../assets/images/brands/dropbox.png";
-import mail_chimp from "../../assets/images/brands/mail_chimp.png";
-import slack from "../../assets/images/brands/slack.png";
 
 class Header extends Component {
   constructor(props) {
