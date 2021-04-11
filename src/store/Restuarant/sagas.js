@@ -40,9 +40,9 @@ export function* saveData(action){
 					formData.append(objData,allData[objData]);
 					}
 				}
-				// formData.append("r_logo",allData.r_logo[0]);
-				// formData.append("r_cover",allData.r_cover[0])
-				// const allData= JSON.stringify();
+					for (let [key, value] of formData) {
+ 				 console.log(`from form data ${key}: ${value}`)
+			}
 				console.log("all data",allData)
 				yield put({type:RESTUARANTS.SET_DATA_LOADING});
 				const response = yield call(setRestuarantDataAPI,"https://khajaorder.com/korderapi/resturants/add.php",formData)

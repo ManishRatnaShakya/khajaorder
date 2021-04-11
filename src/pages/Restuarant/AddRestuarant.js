@@ -123,6 +123,7 @@ class AddProduct extends Component {
             rd_y_link:'',
             rd_gmap_code:'',
             rd_w_link:'',
+            r_available:false,
 
         }
         })
@@ -137,7 +138,7 @@ class AddProduct extends Component {
             positionClass:"toast-bottom-right",
             closeButton:true
         }
-        toastr.warning("Recheck The Email it should not be same ")
+        toastr.warning("Recheck The Email  ")
         this.props.onSetInitial();  
     }
     toggleTab(tab) {
@@ -160,7 +161,8 @@ class AddProduct extends Component {
         }
     }
     render() {
-        console.log("state",this.state.restuarant.r_name);
+        console.log("state",this.state);
+
         if(this.props.success){
             this.onSuccess()
         }
