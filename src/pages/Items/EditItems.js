@@ -125,7 +125,7 @@ class EditItem extends Component {
             closeButton:true
         }
 
-        toastr.success("Items added successful");
+        toastr.success("Items Edited Successful");
         this.setState({items:{
             i_name:'',
             i_callname:'',

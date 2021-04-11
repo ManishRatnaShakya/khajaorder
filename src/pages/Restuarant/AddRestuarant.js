@@ -40,7 +40,8 @@ class AddProduct extends Component {
             activeTab: 1,
             selectedFiles: [],
             selectedFilesCover: [],
-            restuarant:{r_available:"no",}
+            restuarant:{r_available:"no"},
+            isAvailable:false
             
         }
        
@@ -126,7 +127,9 @@ class AddProduct extends Component {
             r_available:"no",
 
         }
+       
         })
+         this.setState({isAvailable:false})
           this.setState({ selectedFilesCover: [] });
           this.setState({ selectedFiles: [] });
           this.props.onSetInitial();    
@@ -138,7 +141,7 @@ class AddProduct extends Component {
             positionClass:"toast-bottom-right",
             closeButton:true
         }
-        toastr.warning("Recheck The Email  ")
+        toastr.warning("Recheck The Data ")
         this.props.onSetInitial();  
     }
     toggleTab(tab) {
@@ -153,7 +156,7 @@ class AddProduct extends Component {
   
     isSetAvailable(){
         this.setState({isAvailable:!this.state.isAvailable})
-        if(this.state.isAvailable===true){
+        if(this.state.isAvailable===false){
             this.setState({restuarant:{...this.state.restuarant,r_available:"yes"}})
         }
         else{

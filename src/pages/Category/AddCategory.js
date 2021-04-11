@@ -95,7 +95,7 @@ class AddCategory extends Component {
             closeButton:true
         }
 
-        toastr.success("Category Edited Successful");
+        toastr.success("Category Added Successful");
         this.setState({selectedFiles:[]})
         this.props.onSetInitial();    
     }    
