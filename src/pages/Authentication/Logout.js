@@ -32,7 +32,7 @@ class Logout extends Component {
             }
            toastr.success("You were logged out",time);
         return (
-           <Redirect to="/login" />
+           <Redirect to="/" />
         );
     }
 }
