@@ -21,9 +21,7 @@ import {
     changeDiscountRate ,
     changeImage1 ,
     changeImage2 ,
-    
     changeDescription ,
-    
     editItemChanges
 } from '../../store/Items/actions';
 //select

@@ -176,12 +176,7 @@ class ViewItems extends Component {
                                             <NavItem>
                                                 <NavLink onClick={() => { this.toggleTab('1'); }} className={classnames({ active: this.state.activeTab === '1' }, "font-weight-bold p-3")}>All Items</NavLink>
                                             </NavItem>
-                                            <NavItem>
-                                                <NavLink onClick={() => { this.toggleTab('2'); }} className={classnames({ active: this.state.activeTab === '2' }, "p-3 font-weight-bold")}>Active</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink onClick={() => { this.toggleTab('3'); }} className={classnames({ active: this.state.activeTab === '3' }, " p-3 font-weight-bold")}>Unpaid</NavLink>
-                                            </NavItem>
+                                         
                                         </Nav>
                                         <MDBDataTable responsive data={data} className="mt-4" />
                                     </CardBody>
