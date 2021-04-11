@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import Dropzone from "react-dropzone";
 
 //select
-import Select from 'react-select';
+// import Select from 'react-select';
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
@@ -62,13 +62,13 @@ class Profile extends Component {
     }
 
     render() {
-        const options = [
-            { value : "TO", label : "Touchscreen" },
-            { value : "CF", label : "Call Function" },
-            { value : "NO", label : "Notifications" },
-            { value : "FI", label : "Fitness" },
-            { value : "OU", label : "Outdoor" },
-        ]
+        // const options = [
+        //     { value : "TO", label : "Touchscreen" },
+        //     { value : "CF", label : "Call Function" },
+        //     { value : "NO", label : "Notifications" },
+        //     { value : "FI", label : "Fitness" },
+        //     { value : "OU", label : "Outdoor" },
+        // ]
         return (
             <React.Fragment>
                 <div className="page-content">

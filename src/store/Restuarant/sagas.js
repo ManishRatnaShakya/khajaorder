@@ -149,8 +149,13 @@ export function* editRestuarant(action){
 						}
 					
 					}
-					else if(objData==="r_name" ||objData==="r_tagline" ||objData==="r_contact1" ||objData==="r_contact2" ||objData==="r_streetname" ||objData==="r_city" ||objData==="r_state" ||objData==="r_zipcode" ||objData==="r_available" ||objData==="r_description" ||objData==="r_ad_id" ||objData==="r_id" ||objData==="rd_id" ||objData==="rd_r_id" ){
+					else if(objData==="r_name" ||objData==="r_tagline" ||objData==="r_contact1" ||objData==="r_contact2" ||objData==="r_streetname" ||objData==="r_city" ||objData==="r_state" ||objData==="r_zipcode" ||objData==="r_available" ||objData==="r_description" ||objData==="r_ad_id" ||objData==="r_id" ||objData==="rd_id" ||objData==="rd_r_id" ||objData==="rd_gmap_code"||objData==="rd_w_link"||objData==="rd_y_link"||objData==="rd_i_link"||objData==="rd_f_link"){
+						if(allData[objData]!==""){
 						formData.append(objData,allData[objData]);
+						}
+						else{
+							formData.append(objData,"");
+						}
 					}
 					else{
 					// formData.append(objData,allData[objData]);

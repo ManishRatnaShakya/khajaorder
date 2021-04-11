@@ -34,7 +34,11 @@ class ViewRestuarant extends Component {
             isModal:false,
             deleteId:'',  
             isChangePasswordModal:false,
-            changePasswordId:''
+            changePasswordId:'',
+            useRestuarant:{
+                id:"",
+                restuarantName:"",
+            },
         }
      
         this.toggleTab = this.toggleTab.bind(this);
@@ -67,14 +71,16 @@ class ViewRestuarant extends Component {
         this.setState({isModal:!this.state.isModal});
 
     }
-    onChangeWithId(id){
+    onChangeWithId(id,name){
         this.setState({isChangePasswordModal:!this.state.isChangePasswordModal});
-        this.setState({changePasswordId:id})
+        // this.setState({changePasswordId:id})
+        this.setState({useRestuarant:{...this.state.useRestuarant,id:id,restuarantName:name}})
     }
     onChangePassword(id){
         this.setState({isChangePasswordModal:!this.state.isChangePasswordModal});
         // this.props.changePasswordFromAPI(id)
     }
+    
     render() {
         // this.props.data && this.setState(this.props.data);
         console.log("log",this.props.data);
@@ -166,7 +172,7 @@ class ViewRestuarant extends Component {
                             </UncontrolledTooltip >
 
                         <Link 
-                            onClick={()=>this.onChangeWithId(td.r_id)}
+                            onClick={()=>this.onChangeWithId(td.r_id,td.r_name)}
                          className="text-primary" id="password3"><i className="mdi mdi-key font-size-18"></i></Link>
                             <UncontrolledTooltip placement="top" target="password3">
                                 Change Password
@@ -197,7 +203,7 @@ class ViewRestuarant extends Component {
                           style={{top:'140px'}}
                         >
                           <ModalHeader toggle={() => this.setState({ isChangePasswordModal: false })}>
-                              <h5>Change {td.r_name} Restuarant's password </h5>
+                              <h5>Change {this.state.useRestuarant.restuarantName} Restuarant's password </h5>
                           </ModalHeader>
                           <ModalBody>
                                    <Form>

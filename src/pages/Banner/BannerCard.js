@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, CardBody, Row, Col, Media,Button,Input,Badge } from "reactstrap";
+import {  Card, CardBody, Row, Col, Media,Button,Input,Badge } from "reactstrap";
 import { Link } from "react-router-dom";
 class BannerCard extends Component {
     state={
@@ -8,11 +8,14 @@ class BannerCard extends Component {
         b_home1_url:'',
         b_home1:[]
     }
+    onSaveURL(){
+        this.props.onChangeURL(this.state.b_home1_url);
+    }
     render() {
         console.log(this.state)
         return(
                 <Card>
-                                            <CardBody>
+                     <CardBody>
                                                 <div className="text-center">
                                                     <img src={`https://khajaorder.com/korderapi/images/banners/${ this.props.shop.b_home1}`} alt="" className="avatar-sm mt-2 mb-4"/>
                                                     <Media body>

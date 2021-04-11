@@ -11,11 +11,11 @@ import MiniWidgets from "./MiniWidgets";
 import RevenueAnalytics from "./RevenueAnalytics";
 import SalesAnalytics from "./SalesAnalytics";
 import EarningReports from "./EarningReports";
-import Sources from "./Sources";
-import RecentlyActivity from "./RecentlyActivity";
-import RevenueByLocations from "./RevenueByLocations";
-import ChatBox from "./ChatBox";
-import LatestTransactions from "./LatestTransactions";
+// import Sources from "./Sources";
+// import RecentlyActivity from "./RecentlyActivity";
+// import RevenueByLocations from "./RevenueByLocations";
+// import ChatBox from "./ChatBox";
+// import LatestTransactions from "./LatestTransactions";
 import {getCategoryData} from "../../store/Category/actions";
 import {getRestuarantData} from '../../store/Restuarant/actions';
 class Dashboard extends Component {
@@ -39,6 +39,9 @@ class Dashboard extends Component {
         this.props.onGetRestuarantData();
     }
     render() {
+        console.log("this props ",this.props.restuarants)
+        console.log("this props ",this.props.items)
+        console.log("this props ",this.props.items)
         return (
             <React.Fragment>
                 <div className="page-content">

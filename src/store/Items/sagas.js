@@ -1,10 +1,10 @@
 // import { all, call, fork, takeEvery, select,put } from "redux-saga/effects";
 
-import { put,all, call, takeLatest, select,fork } from 'redux-saga/effects';
+import { put,all, call, takeLatest,fork } from 'redux-saga/effects';
 
 
 import { ITEMS } from './constants';
-import {makeSelectItem} from './selectors';
+// import {makeSelectItem} from './selectors';
 
 export function setItemsDataAPI(url,formData){
 	return fetch(url,{method:'POST',ContentType: 'multipart/form-data',body:formData}).then(response=>response.json()).then(data=>data);

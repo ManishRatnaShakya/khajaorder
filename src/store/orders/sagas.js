@@ -1,11 +1,11 @@
 // import { all, call, fork, takeEvery, select,put } from "redux-saga/effects";
 
-import { put,all, call, takeLatest, select,fork } from 'redux-saga/effects';
+import { put,all, call, takeLatest,fork } from 'redux-saga/effects';
 
 
 import { ORDERS } from './constants';
-import {makeSelectOrderStatus} from './selectors';
-import { deleteItem } from './../Items/actions';
+// import {makeSelectOrderStatus} from './selectors';
+// import { deleteItem } from './../Items/actions';
 
 
 
@@ -51,7 +51,7 @@ export function* getOrder(){
 	try{
 		const storage=JSON.parse(localStorage.getItem("authUser"));
 		const token= storage.token;
-		const tokenData=JSON.stringify({token:token})
+		
 		yield put({type:ORDERS.GET_ORDER_DATA_LOADING})
 		const response = yield call(setDataAPI,`https://khajaorder.com/korderapi/orders/view.php?token=${token}`);
 		console.log('res from get order',response);
@@ -102,6 +102,8 @@ export function* getOrderData(){
 export function* editOrderStatus(action) {
 	const data = action.status;
 	console.log("from saga",data);
+	yield "hello"
+	
 }
 export function* editOrder(){
 	yield takeLatest(ORDERS.ORDER_STATUS_UPDATE,editOrderStatus)

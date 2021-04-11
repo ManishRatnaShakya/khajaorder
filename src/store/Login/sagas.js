@@ -1,5 +1,5 @@
 import { takeEvery, fork, put, all, call,select } from 'redux-saga/effects';
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 // Login Redux States
 import { LOGIN } from './constants';
 import { loginUserSuccess,loginError,loginUserLoading } from './actions';
@@ -44,14 +44,14 @@ function* loginUser() {
 				
 				}
 				else{
-					// console.log("error",response);
+					
 					yield put(loginError("Email or Password is Incorrect!"));
 				}
             
-            // payload.history.push('/dashboard');
         } catch (error) {
             // yield put(apiError(error));
 			console.log("api error",error);
+			yield put(loginError("Email or Password is Incorrect!"));
         }
 }
 

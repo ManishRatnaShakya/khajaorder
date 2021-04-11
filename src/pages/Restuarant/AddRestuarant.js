@@ -9,30 +9,13 @@ import 'toastr/build/toastr.min.css'
 //Dropzone
 import Dropzone from "react-dropzone";
 import {
-    changeName,
-    changeEmail,
-    changePassword ,
-    changeAddress,
-    changeCity ,
-    changeState,
-    changeZip ,
-    changeContact1 ,
-    changeContact2 ,
-    changeTagline ,
-    changeDescription ,
-    changeFacebook,
-    changeInstagram ,
-    changePinterest,
-    changeTwitter ,
-    changeGoogleMap,
-    changeLogo,
-    changeCover,
+   
     saveChanges,
-    changeStatus,
+   
     setInitial,
 } from '../../store/Restuarant/actions';
 //select
-import Select from 'react-select';
+// import Select from 'react-select';s
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
@@ -43,7 +26,7 @@ import {
    makeSelectSetError,
    makeSelectSetLoading,
  } from '../../store/Restuarant/selectors';
-import Alert from 'reactstrap/lib/Alert';
+// import Alert from 'reactstrap/lib/Alert';
 // import { makeSelectSetStatus } from './../../store/Restuarant/selectors';
 
 class AddProduct extends Component {

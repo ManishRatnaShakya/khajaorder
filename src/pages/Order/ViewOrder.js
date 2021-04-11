@@ -6,11 +6,11 @@ import Breadcrumbs from '../../components/Common/Breadcrumb';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import {compose} from 'redux';
-import {makeSelectDataFromAPI,makeSelectLoading} from "../../store/Restuarant/selectors";
+import {makeSelectLoading} from "../../store/Restuarant/selectors";
 import {makeSelectOrder} from "../../store/orders/selectors";
 import {getOrderDataAPI} from '../../store/orders/actions';
 // import React, { Component } from 'react';
-import { Container,Badge, Card, CardBody,Table, Row, Col, Nav, NavItem, NavLink, UncontrolledTooltip, Input, Label, Button,Modal,ModalHeader,ModalBody } from "reactstrap";
+import { Container, Card, CardBody, Row, Col, Nav, NavItem, NavLink, UncontrolledTooltip, Button,Modal,ModalHeader,ModalBody } from "reactstrap";
 import { Link } from "react-router-dom";
 import classnames from 'classnames';
 import {makeSelectItems} from '../../store/Items/selectors'
