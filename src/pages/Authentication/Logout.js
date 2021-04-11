@@ -19,6 +19,7 @@ class Logout extends Component {
     }
 
     render() {
+        localStorage.clear();
         let today = new Date()
         let ampm =today.getHours() >= 12 ? 'pm' : 'am';
 
@@ -31,7 +32,7 @@ class Logout extends Component {
             }
            toastr.success("You were logged out",time);
         return (
-           <Redirect to="/login" />
+           <Redirect to="/" />
         );
     }
 }
