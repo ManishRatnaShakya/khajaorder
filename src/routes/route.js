@@ -1,6 +1,5 @@
 import React from "react";
-import {  BrowserRouter as Router, Route, Redirect,Switch} from "react-router-dom";
-import PageNotFound from "../pages/Utility/Error404";
+import {  Route, Redirect,Switch} from "react-router-dom";
 const AppRoute = ({
 	component: Component,
 	layout: Layout,

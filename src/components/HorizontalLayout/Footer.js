@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { Container, Row, Col } from "reactstrap";
 
 const Footer = () => {

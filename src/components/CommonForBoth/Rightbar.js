@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FormGroup, Label, Input } from "reactstrap";
 
 import { connect } from "react-redux";
 import {
@@ -12,15 +11,10 @@ import {
 } from "../../store/actions";
 
 //SimpleBar
-import SimpleBar from "simplebar-react";
 
-import { Link } from "react-router-dom";
 
 import "./rightbar.scss";
 //Import images
-import layout1 from "../../assets/images/layouts/layout-1.jpg";
-import layout2 from "../../assets/images/layouts/layout-2.jpg";
-import layout3 from "../../assets/images/layouts/layout-3.jpg";
 
 class RightSidebar extends Component {
   constructor(props) {
