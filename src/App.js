@@ -15,6 +15,7 @@ import NonAuthLayout from "./components/NonAuthLayout";
 import "./theme.scss";
 
 //Fake backend
+// eslint-disable-next-line no-unused-vars
 import fakeBackend from './helpers/AuthType/fakeBackend';
 
 //Firebase helper
