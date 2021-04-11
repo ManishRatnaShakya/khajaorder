@@ -40,7 +40,7 @@ class AddProduct extends Component {
             activeTab: 1,
             selectedFiles: [],
             selectedFilesCover: [],
-            restuarant:{}
+            restuarant:{r_available:"no",}
             
         }
        
@@ -123,7 +123,7 @@ class AddProduct extends Component {
             rd_y_link:'',
             rd_gmap_code:'',
             rd_w_link:'',
-            r_available:false,
+            r_available:"no",
 
         }
         })
@@ -153,7 +153,7 @@ class AddProduct extends Component {
   
     isSetAvailable(){
         this.setState({isAvailable:!this.state.isAvailable})
-        if(this.state.isAvailable===false){
+        if(this.state.isAvailable===true){
             this.setState({restuarant:{...this.state.restuarant,r_available:"yes"}})
         }
         else{
