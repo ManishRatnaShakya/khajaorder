@@ -166,7 +166,7 @@ class EditItem extends Component {
 
     toggleTab(tab) {
         if (this.state.activeTab !== tab) {
-            if(tab >= 1 && tab <=3 ){
+            if(tab >= 1 && tab <=2 ){
                 this.setState({
                     activeTab: tab
                 });
@@ -219,6 +219,7 @@ isSetAvailable(){
     }
     render() {
         console.log("from item items",this.state);
+        
        
         if(this.props.success){
             this.onSuccess();
@@ -291,18 +292,20 @@ isSetAvailable(){
 													            </FormGroup>
                                                             </Col>
                                                             <Col md={6}>
-                                                                <FormGroup>
+                                                                <FormGroup  className="select2-container">
                                                                     <Label className="control-label">Restuarant</Label>
-                                                                    <select className="form-control select2"  onChange={(e)=>this.setState({items:{...this.state.items,i_r_id:e.target.value}})}  value={this.state.items.i_r_id}>
-                                                                        
-                                                                        <option>Select Restuarant</option>
-                                                                        {this.props.restuarantData && this.props.restuarantData.map(restuarant=>
-                                                                        <option value={restuarant.r_id}>{restuarant.r_name}</option>
+                                                                    <Select 
+                                                                    isMulti={true}
+                                                                     onChange={(e)=>this.setState({items:{...this.state.items,i_r_id:e}})}  
+                                                                        value={this.state.items.i_r_id}
+                                                                        options=
+                                                                        {this.props.restuarantData &&  this.props.restuarantData.filter((data)=>this.state.i_r_id===data.i_r_id).map(restuarant=>
+                                                                        ({label:`${restuarant.r_name}`,value:`${restuarant.r_id}`})
                                                                         )}
-                                                                    </select>
+                                                                        />
+                                                                    
                                                                 </FormGroup>
                                                             </Col>
-                                                           
                                                         </Row>
 
                                                         <Row>

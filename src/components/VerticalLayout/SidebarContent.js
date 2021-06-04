@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import MetisMenu from "metismenujs";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import {getPermissions} from "../../Constants/localStorageSession";
 //i18n
 import { withNamespaces } from 'react-i18next';
 
@@ -86,9 +86,12 @@ class SidebarContent extends Component {
     };
 
     render() {
+        const data= getPermissions();
+        console.log("data from permission",data);
+       
         return (
             <React.Fragment>
-
+                {data.map((d) =>
                  <div id="sidebar-menu">
                         <ul className="metismenu list-unstyled" id="side-menu">
                             <li className="menu-title">{this.props.t('Menu')}</li>
@@ -100,6 +103,7 @@ class SidebarContent extends Component {
                                 </Link>
                             </li>
 
+                             {d.p_viewitem==='1' &&
                              <li>
                                 <Link to="/#" className="has-arrow waves-effect">
                                     <i className="ri-store-2-line"></i>
@@ -110,6 +114,8 @@ class SidebarContent extends Component {
                                     <li><Link to="/items">{this.props.t('View Items')}</Link></li>
                                 </ul>
                             </li>
+                            }
+                             {d.p_viewcategory==='1' &&
                              <li>
                                 <Link to="/#" className="has-arrow waves-effect">
                                     <i className="ri-store-2-line"></i>
@@ -120,20 +126,26 @@ class SidebarContent extends Component {
                                     <li><Link to="/category">{this.props.t('View Category')}</Link></li>
                                 </ul>
                             </li>
+    }
 
+                    {d.p_viewbanner==='1' &&
                             <li>
                                 <Link to="/banner" className=" waves-effect">
                                     <i className="ri-calendar-2-line"></i>
                                     <span className="ml-1">{this.props.t('Banner')}</span>
                                 </Link>
                             </li>
+    }
+
+     {d.p_viewcategory==='1' &&
                             <li>
+                    
                                 <Link to="/orders" className=" waves-effect">
                                     <i className="ri-calendar-2-line"></i>
                                     <span className="ml-1">{this.props.t('Orders')}</span>
                                 </Link>
                             </li>
-
+    }
                             {/* <li>
                                 <Link to="calendar" className=" waves-effect">
                                     <i className="ri-calendar-2-line"></i>
@@ -164,6 +176,7 @@ class SidebarContent extends Component {
                                     <li><Link to="ecommerce-add-product">{this.props.t('Add Product')}</Link></li>
                                 </ul>
                             </li> */}
+                            
                             <li>
                                 <Link to="/#" className="has-arrow waves-effect">
                                     <i className="ri-store-2-line"></i>
@@ -178,6 +191,8 @@ class SidebarContent extends Component {
                                     <li><Link to="/overall-report">{this.props.t('Overall Report')}</Link></li>
                                 </ul>
                             </li>
+                            
+                            {d.p_viewrestro &&
                              <li>
                                 <Link to="/#" className="has-arrow waves-effect">
                                     <i className="ri-store-2-line"></i>
@@ -188,6 +203,7 @@ class SidebarContent extends Component {
                                     <li><Link to="/view-restuarant">{this.props.t('View Restaurant')}</Link></li>
                                 </ul>
                             </li>
+    }
                 
                             {/* <li>
                                 <Link to="/#" className="has-arrow waves-effect">
@@ -356,7 +372,9 @@ class SidebarContent extends Component {
 
                         */}
                         </ul> 
+                
                     </div>
+                )}
             </React.Fragment>
         );
     }

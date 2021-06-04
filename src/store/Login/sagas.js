@@ -37,7 +37,7 @@ function* loginUser() {
 				ad_email: email, ad_password: password
 				});
 				
-			
+				
 				if(response.success){
                 localStorage.setItem("authUser", JSON.stringify(response));
                 yield put(loginUserSuccess(response.token));
@@ -50,8 +50,8 @@ function* loginUser() {
             
         } catch (error) {
             // yield put(apiError(error));
-			console.log("api error",error);
-			yield put(loginError("Email or Password is Incorrect!"));
+			console.log("res",error);
+			yield put(loginError(error.message));
         }
 }
 

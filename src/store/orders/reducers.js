@@ -60,12 +60,8 @@ const Orders =(state=initialState ,action)=>
             draft.error =action.error;
             break;
         
-        // case CATEGORY.DELETE_CATEGORY_SUCCESS:
-        //     console.log("the data",action.id)
-        //     const newData = state.category.filter(data => data.cat_id !== action.id);
-        //     console.log("the new data from category",newData)
-        //     draft.category= newData;
-        //     break;
+        case ORDERS.ORDER_STATUS_UPDATE_SUCCESS:
+           draft.orders = action.order;
         
         // case CATEGORY.DELETE_CATEGORY_ERROR:
         //     draft.error=action.error;

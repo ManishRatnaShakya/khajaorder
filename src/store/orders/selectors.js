@@ -41,6 +41,12 @@ export const makeSelectOrderStatus=()=>createSelector(
 
 export const makeSelectOrderData=()=>createSelector(
     selectCategory,
-    order=>order.status
+    order=>order
 )
+
+export const makeSelectOrderId=()=>createSelector(
+    selectCategory,
+    order=>order.orders
+)
+
 

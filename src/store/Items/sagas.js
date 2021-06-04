@@ -2,7 +2,7 @@
 
 import { put,all, call, takeLatest,fork } from 'redux-saga/effects';
 
-
+import {getLocalStorageData} from '../../Constants/localStorageSession';
 import { ITEMS } from './constants';
 // import {makeSelectItem} from './selectors';
 
@@ -32,6 +32,14 @@ export function* saveItemData(action){
 				}
 				console.log("arrCat",objData,"-->",arrCat);
 				formData.append("i_cat_id",arrCat);
+			}
+			else if(objData==="i_r_id"){
+				let arrCat=[];
+				for(const category in allData['i_r_id']){
+					arrCat.push(allData['i_r_id'][category].value);
+				}
+				console.log("arrCat",objData,"-->",arrCat);
+				formData.append("i_r_id",arrCat);
 			}
 			else if(objData==="i_r_id"){
 				console.log("i am in rage ",data.i_r_id);
@@ -115,8 +123,9 @@ export function* deleteItem(){
 
 export function* editItems(action){
 	try{
-		const storage=JSON.parse(localStorage.getItem("authUser"));
-		const token= storage.token;
+		// const storage=JSON.parse(localStorage.getItem("authUser"));
+		// const token= storage.token;
+		const token=yield call(getLocalStorageData());
 		const data= action.data;
 		const id=action.id;
 		const allDat =Object.assign({token:token},data);
@@ -147,9 +156,13 @@ export function* editItems(action){
 				console.log("arrCat",arrCat);
 				formData.append("category",arrCat);
 			}
-			else if(objData==="i_r_id"){
-			
-				formData.append("i_r_id",data.i_r_id)
+				else if(objData==="i_r_id"){
+				let arrCat=[];
+				for(const category in allData['i_r_id']){
+					arrCat.push(allData['i_r_id'][category].value);
+				}
+				console.log("arrCat",objData,"-->",arrCat);
+				formData.append("i_r_id",arrCat);
 			}
 			else{
 				

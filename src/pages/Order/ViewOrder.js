@@ -35,7 +35,7 @@ class ViewOrder extends Component {
             data:[] ,
             isModal:false,
             isViewOrder: false,
-           orderStatus:''
+            order:''
         }
         this.toggleTab = this.toggleTab.bind(this);
     }
@@ -118,10 +118,10 @@ class ViewOrder extends Component {
                         phone:td.u_phone,
                         destination:td.o_location,       
                         // status:<>{td.r_available==="yes"?<Badge className="badge-soft-success mr-1">Active</Badge>:<Badge className="badge-soft-danger mr-1">Not Active</Badge>}</>,
-                        status:<>{this.state.orderStatus==="processing"?<p>processing</p>:this.state.orderStatus==="Delivered"?<p>Delivered</p>:this.state.orderStatus==="payment accepted"?<p>payment accepted</p>:this.state.orderStatus==="refunded"?<p>Refunded</p>:this.state.orderStatus==="cancelled"?<p>Cancelled</p> :<p> no status</p> }</>  
+                        status:<>{td.cart_status==="Processing"?<p>processing</p>:td.cart_status==="Delivered"?<p>Delivered</p>:td.cart_status==="payment accepted"?<p>payment accepted</p>:td.cart_status==="refunded"?<p>Refunded</p>:td.cart_status==="cancelled"?<p>Cancelled</p> :<p> no status</p> }</>  
                       ,
                         change_status:
-                        <div><select  className="form-control select2"  onChange={(e)=>this.props.onChangeOrderStatus(e.target.value)}  value={this.props.orderStatus}>
+                        <div><select  className="form-control select2"  onChange={(e)=>this.props.onChangeOrderStatus(e.target.value,td.o_common_id,td.o_id)}>
                                                                         
                                                                         <option>Select status</option>
                                                                         <option value="processing">Processing</option>                    
@@ -244,7 +244,7 @@ const mapDispatchToProps =(dispatch)=>{
         onGetOrderData:()=>dispatch(getOrderDataAPI()),
         onDelete:(id)=>dispatch(deleteRestuarant(id)),
         onGetItemsData:()=>dispatch(getItemData()),
-        onChangeOrderStatus:()=>dispatch(changeOrderStatus()),
+        onChangeOrderStatus:(status,id,o_id)=>dispatch(changeOrderStatus(status,id,o_id)),
     }
 }
 

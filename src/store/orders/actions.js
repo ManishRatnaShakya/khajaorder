@@ -20,9 +20,10 @@ export const getOrderDataAPI=()=>({
     type:ORDERS.GET_ORDER_DATA_API
 })
 
-export const changeOrderStatus=(status)=>({
+export const changeOrderStatus=(status,id)=>({
     type:ORDERS.ORDER_STATUS_UPDATE,
-    status
+    status,
+    id
 })
 // export const setCategoryData=(data)=>({
 //     type:CATEGORY.SET_CATEGORY_DATA_API,

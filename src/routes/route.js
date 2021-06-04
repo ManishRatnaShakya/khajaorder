@@ -17,6 +17,7 @@ const AppRoute = ({
 							<Redirect to={{ pathname: "/login", state: { from: props.location } }} />
 						);
 					}
+					
 				
 					return (
 						<Layout>

@@ -70,8 +70,7 @@ class AddProduct extends Component {
             selectedFilesCover: [],
             selectedFilesCover1: [],
             items:{
-                i_available:"yes",
-               
+                i_available:"yes", 
             },
             isOffer: false,
             isAvailable: false,
@@ -175,7 +174,7 @@ class AddProduct extends Component {
       }
       formatBytes = (bytes, decimals = 2) => {
         if (bytes === 0) return "0 Bytes";
-        const k = 1024;
+        const k = 1024*5;
         const dm = decimals < 0 ? 0 : decimals;
         const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
     
@@ -185,7 +184,7 @@ class AddProduct extends Component {
 
     toggleTab(tab) {
         if (this.state.activeTab !== tab) {
-            if(tab >= 1 && tab <=3 ){
+            if(tab >= 1 && tab <=2 ){
                 this.setState({
                     activeTab: tab
                 });
@@ -293,7 +292,7 @@ class AddProduct extends Component {
                                                                     <Input  onChange={(e)=>this.setState({items:{...this.state.items,category:e.target.value}})}  value={this.state.items.category} type="text" className="form-control"/>
                                                                 </FormGroup> */}
                                                                 <FormGroup className="select2-container">
-                                                                    <Label className="control-label">Multiple Select</Label>
+                                                                    <Label className="control-label">Multiple Select Category</Label>
                                                                     <Select
                                                                         value={this.state.items.i_cat_id}
                                                                         isMulti={true}
@@ -304,15 +303,18 @@ class AddProduct extends Component {
 													            </FormGroup>
                                                             </Col>
                                                             <Col md={6}>
-                                                                <FormGroup>
+                                                                <FormGroup  className="select2-container">
                                                                     <Label className="control-label">Restuarant</Label>
-                                                                    <select className="form-control select2"  onChange={(e)=>this.setState({items:{...this.state.items,i_r_id:e.target.value}})}  >
+                                                                    <Select 
+                                                                    isMulti={true}
+                                                                     onChange={(e)=>this.setState({items:{...this.state.items,i_r_id:e}})}  
                                                                         
-                                                                        <option>Select Restuarant</option>
+                                                                        options=
                                                                         {this.props.restuarantData && this.props.restuarantData.map(restuarant=>
-                                                                        <option value={restuarant.r_id}>{restuarant.r_name}</option>
+                                                                        ({label:`${restuarant.r_name}`,value:`${restuarant.r_id}`})
                                                                         )}
-                                                                    </select>
+                                                                        />
+                                                                    
                                                                 </FormGroup>
                                                             </Col>
                                                            

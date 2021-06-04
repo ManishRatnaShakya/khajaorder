@@ -50,7 +50,7 @@ class ForgetPasswordPage extends Component {
                                                 </div>
     
                                                 <h4 className="font-size-18 mt-4">Reset Password</h4>
-                                                <p className="text-muted">Reset your password to Nazox.</p>
+                                                <p className="text-muted">Reset your password to Khaja Order.</p>
                                             </div>
 
                                             <div className="p-2 mt-5">
